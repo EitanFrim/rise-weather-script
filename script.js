@@ -1,9 +1,10 @@
 (function() {
-    const apiKey = '390d1e94306741efa47155236240806'; // Replace with your WeatherAPI key
-    const geoApiUrl = 'http://api.weatherapi.com/v1/search.json';
-    const weatherApiUrl = 'http://api.weatherapi.com/v1/forecast.json';
+    let apiKey;
+    const geoApiUrl = 'https://api.weatherapi.com/v1/search.json';
+    const weatherApiUrl = 'https://api.weatherapi.com/v1/forecast.json';
 
-    function createWeatherDiv(containerId) {
+    function createWeatherDiv(containerId, weatherApiKey) {
+		apiKey = weatherApiKey;
         const container = containerId ? document.getElementById(containerId) : document.body;
         const weatherDiv = document.createElement('div');
         weatherDiv.id = 'weather-widget';
